@@ -1,0 +1,16 @@
+<div class="login">
+  <h2 class="login-header">Log in</h2>
+  <form [formGroup]="loginForm" class="login-container" (ngSubmit)="onSubmit()">
+    <div>
+      <input type="text" placeholder="Email" formControlName="username">
+    </div>
+    <span *ngIf="formControls['username']?.errors?.['required'] && formControls['username'].touched">Email is required</span>
+
+    <div>
+      <input type="password" placeholder="Password" formControlName="password">
+    </div>
+    <span *ngIf="formControls['password']?.errors?.['required'] && formControls['password'].touched">Password is
+      required</span>
+      <input type="submit" value="Log in">
+  </form>
+</div>
